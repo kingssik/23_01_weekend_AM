@@ -11,6 +11,7 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 
 		int lastArticleId = 0;
+
 		List<Article> articles = new ArrayList<>();
 
 		while (true) {
@@ -44,9 +45,13 @@ public class Main {
 				if (articles.size() == 0) {
 					System.out.println("게시글이 없습니다");
 					continue;
-				} else {
-					System.out.println("게시글 존재");
 				}
+				System.out.println("번호	|	제목");
+				for (int i = articles.size() - 1; i >= 0; i--) {
+					Article article = articles.get(i);
+					System.out.printf("%d	|	%s\n", article.id, article.title);
+				}
+
 			} else {
 				System.out.println("없는 명령어입니다");
 			}
